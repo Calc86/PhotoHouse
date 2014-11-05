@@ -44,8 +44,8 @@ public class PhotoPrint extends Activity {
     }
 
     protected String convertMediaUriToPath(Uri uri) {
-        String [] proj={MediaStore.Images.Media.DATA};
-        Cursor cursor = getContentResolver().query(uri, proj,  null, null, null);
+        String [] projection = {MediaStore.Images.Media.DATA};
+        Cursor cursor = getContentResolver().query(uri, projection,  null, null, null);
         int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
         cursor.moveToFirst();
         String path = cursor.getString(column_index);
